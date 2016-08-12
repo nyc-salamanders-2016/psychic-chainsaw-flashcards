@@ -3,26 +3,48 @@
 class FlashcardViewer
   def display_greeting
     system("clear")
-
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNM                                 MNMNM"
-    puts "       Hello! Welcome to Flashcards!       "
-    puts "MNMNM                                 MNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "-=[ chainsaw ]=-  8/97
+    counter = 0
+      until counter == 20
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNM                                 MNMNM"
+        puts "       Hello! Welcome to Flashcards!       "
+        puts "MNMNM                                 MNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "
           .-----.
          /::::::|^^^^^^^^^^^^^^^^^^^^^^^^^^.
         |():::::| P . S . Y . C . H . I . C }
          \::::::|     C H A I N S A W      .'
-          '-----'^^^^^^^^^^^^^^^^^^^^^^^^^^"
-    puts ""
-    puts ""
-    sleep 2
+          '-----'^^^^^^^^^^^^^^^^^^^^^^^^^"
+        puts ""
+        puts ""
+        sleep 0.2
+        system("clear")
+
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMN                                 NMNMN"
+        puts "       Hello! Welcome to Flashcards!       "
+        puts "NMNMN                                 NMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "
+      .-----.
+     /::::::|vvvvvvvvvvvvvvvvvvvvvvvvvv.
+    |():::::| P . S . Y . C . H . I . C }
+     \::::::|     C H A I N S A W      .'
+      '-----'vvvvvvvvvvvvvvvvvvvvvvvvv"
+        puts ""
+        puts ""
+        sleep 0.2
+        system("clear")
+        counter += 1
+    end
   end
 
-  def show_front(front_of_card)
+  def show_front(number, front_of_card)
     sleep 1.5
     system("clear")
     puts "-------------------------------------------------------------"
@@ -44,24 +66,7 @@ class FlashcardViewer
     puts back_of_card
   end
 
-  def goodbye(correct, total)
-    puts judge(correct,total) + " #{correct} out of #{total}!"
+  def goodbye
     puts "That's all I've got, goodbye!"
-  end
-
-  def judge(correct, total)
-    bad  = proc { |n| n < 0.3 }
-    meh  = proc { |n| n < 0.6 }
-    good = proc { |n| n < 0.99 }
-    case correct / total.to_f
-    when bad
-      "You can do better then that..."
-    when meh
-      "Not too shabby."
-    when good
-      "Nicely done!"
-    else
-      "Perfect!"
-    end
   end
 end
