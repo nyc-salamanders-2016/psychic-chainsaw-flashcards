@@ -11,7 +11,7 @@ class FlashcardController
   def run
     @viewer.display_greeting
     @deck.cards.each do |card|
-      response = @viewer.show_front(card)
+      response = @viewer.show_front(card.front)
       if card.answer?(response)
         @viewer.right_answer
       else
