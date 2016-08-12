@@ -11,15 +11,18 @@ class FlashcardController
 
   def run
     @viewer.display_greeting
-    @deck.cards.each do |card|
+    until @deck.learned?
+      card = @deck.draw_card
       # binding.pry
       response = @viewer.show_front(card.front)
       if card.answer?(response)
         @viewer.right_answer
+        card.correct
       else
         @viewer.wrong_answer
-        @viewer.show_back(card.back)
+        card.incorrect
       end
+      @viewer.show_back(card.back)
     end
     @viewer.goodbye
   end
