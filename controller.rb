@@ -25,6 +25,6 @@ class FlashcardController
         @viewer.show_back(card.back)
       end
     end
-    @viewer.goodbye(@correct,@total)
+    @viewer.goodbye()
   end
 end
