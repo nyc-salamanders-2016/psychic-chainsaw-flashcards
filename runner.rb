@@ -1,3 +1,4 @@
 require_relative 'controller'
+require 'pry'
 
-Controller.new(ARGV[0])
+FlashcardController.new(ARGV[0])

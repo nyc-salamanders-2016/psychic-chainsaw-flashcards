@@ -1,3 +1,5 @@
+
+
 class FlashcardViewer
   def display_greeting
     puts "Hello! Welcome to Flashcards!"
@@ -5,7 +7,7 @@ class FlashcardViewer
 
   def show_front(front_of_card)
     puts "Question: #{front_of_card}"
-    gets.chomp
+    STDIN.gets.chomp
   end
 
   def right_answer
