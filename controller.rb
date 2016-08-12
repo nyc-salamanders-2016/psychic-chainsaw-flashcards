@@ -22,8 +22,8 @@ class FlashcardController
         @viewer.right_answer
       else
         @viewer.wrong_answer
+        @viewer.show_back(card.back)
       end
-      @viewer.show_back(card.back)
     end
     @viewer.goodbye(@correct,@total)
   end
