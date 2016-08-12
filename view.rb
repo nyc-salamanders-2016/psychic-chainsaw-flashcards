@@ -3,30 +3,52 @@
 class FlashcardViewer
   def display_greeting
     system("clear")
-
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNM                                 MNMNM"
-    puts "       Hello! Welcome to Flashcards!       "
-    puts "MNMNM                                 MNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
-    puts "-=[ chainsaw ]=-  8/97
+    counter = 0
+      until counter == 20
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNM                                 MNMNM"
+        puts "       Hello! Welcome to Flashcards!       "
+        puts "MNMNM                                 MNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "MNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNM"
+        puts "
           .-----.
          /::::::|^^^^^^^^^^^^^^^^^^^^^^^^^^.
         |():::::| P . S . Y . C . H . I . C }
          \::::::|     C H A I N S A W      .'
-          '-----'^^^^^^^^^^^^^^^^^^^^^^^^^^"
-    puts ""
-    puts ""
-    sleep 2
+          '-----'^^^^^^^^^^^^^^^^^^^^^^^^^"
+        puts ""
+        puts ""
+        sleep 0.2
+        system("clear")
+
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMN                                 NMNMN"
+        puts "       Hello! Welcome to Flashcards!       "
+        puts "NMNMN                                 NMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "NMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMNMN"
+        puts "
+      .-----.
+     /::::::|vvvvvvvvvvvvvvvvvvvvvvvvvv.
+    |():::::| P . S . Y . C . H . I . C }
+     \::::::|     C H A I N S A W      .'
+      '-----'vvvvvvvvvvvvvvvvvvvvvvvvv"
+        puts ""
+        puts ""
+        sleep 0.2
+        system("clear")
+        counter += 1
+    end
   end
 
-  def show_front(front_of_card)
+  def show_front(number, front_of_card)
     sleep 1.5
     system("clear")
     puts "-------------------------------------------------------------"
-    puts " Question: #{front_of_card}"
+    puts " Question ##{number}: #{front_of_card}"
     puts "-------------------------------------------------------------"
     STDIN.gets.chomp
 
