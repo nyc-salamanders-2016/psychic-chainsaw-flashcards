@@ -1,8 +1,10 @@
-class Deck
-  attr_reader :front, :back
+require_relative 'parser'
 
-  def initialize(args={})
-    @front = args.fetch(:front, "")
-    @back = args.fetch(:back, "")
+class Deck
+  include FlashcardParser
+  attr_reader :cards
+
+  def initialize
+    @cards = []
   end
 end
