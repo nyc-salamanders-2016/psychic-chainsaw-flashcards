@@ -5,4 +5,8 @@ class Card
     @front = args.fetch(:front, "")
     @back = args.fetch(:back, "")
   end
+
+  def answer?(string)
+    string == back
+  end
 end

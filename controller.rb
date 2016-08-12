@@ -1,5 +1,5 @@
 require_relative 'parser'
-require_relative 'viewer'
+require_relative 'view'
 
 class FlashcardController
   def initialize(path)
@@ -12,6 +12,7 @@ class FlashcardController
   def run
     @viewer.display_greeting
     @deck.cards.each do |card|
+      # binding.pry
       response = @viewer.show_front(card.front)
       if card.answer?(response)
         @viewer.right_answer
