@@ -20,5 +20,6 @@ class Deck
   end
 
   def learned?
-    @cards.all? { |card| card.sleep == 1 }
+    @cards.all? { |card| card.sleep <=3 }
+  end
 end

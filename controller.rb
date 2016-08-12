@@ -13,8 +13,8 @@ class FlashcardController
     @viewer.display_greeting
     until @deck.learned?
       card = @deck.draw_card
-      # binding.pry
       response = @viewer.show_front(card.front)
+      # binding.pry
       if card.answer?(response)
         @viewer.right_answer
         card.correct
