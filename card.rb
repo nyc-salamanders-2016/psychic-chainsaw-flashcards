@@ -1,5 +1,4 @@
 class Card
-  include Comparable
   attr_reader :front, :back, :sleep
 
   def initialize(args={})
@@ -18,9 +17,5 @@ class Card
 
   def incorrect
     @sleep = [@sleep + 1,20].min
-  end
-
-  def <=> other
-    self.sleep <=> other.sleep
   end
 end
