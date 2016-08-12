@@ -1,5 +1,3 @@
-require_relative 'deck'
-
 class Card
   attr_reader :front, :back
 

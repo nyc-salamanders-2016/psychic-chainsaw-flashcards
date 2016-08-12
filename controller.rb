@@ -1,10 +1,11 @@
 require_relative 'parser'
+require_relative 'viewer'
 
 class FlashcardController
   def initialize(path)
     @path = path
     @viewer = FlashcardViewer.new
-    @deck = Parser.parse_file(@path)
+    @deck = FlashcardParser.parse_file(@path)
     run
   end
 

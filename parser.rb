@@ -1,5 +1,6 @@
 require_relative 'deck'
 require_relative 'card'
+require 'pry'
 
 module FlashcardParser
   def self.parse_file(filename)
@@ -10,7 +11,8 @@ module FlashcardParser
 
   private
   def self.parse_card(card_info)
-    front, back = card_info.match(/\A(.*)\n(.*)\n\n\z/)[1,2]
+    # binding.pry
+    front, back = card_info.match(/\A(.*)\n(.*)\n\n?\z/)[1,2]
     Card.new(front: front, back: back)
   end
 end
