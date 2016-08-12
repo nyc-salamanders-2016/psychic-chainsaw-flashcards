@@ -19,6 +19,6 @@ class FlashcardController
       end
       @viewer.show_back(card)
     end
-    @viewer.goobye
+    @viewer.goodbye
   end
 end
