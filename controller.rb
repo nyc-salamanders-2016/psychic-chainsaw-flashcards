@@ -17,7 +17,7 @@ class FlashcardController
       else
         @viewer.wrong_answer
       end
-      @viewer.show_back(card)
+      @viewer.show_back(card.back)
     end
     @viewer.goobye
   end
