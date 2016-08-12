@@ -26,7 +26,7 @@ class FlashcardViewer
     sleep 1.5
     system("clear")
     puts "-------------------------------------------------------------"
-    puts " Question: #{front_of_card}"
+    puts " Question ##{number}: #{front_of_card}"
     puts "-------------------------------------------------------------"
     STDIN.gets.chomp
 
@@ -44,7 +44,24 @@ class FlashcardViewer
     puts back_of_card
   end
 
-  def goodbye
+  def goodbye(correct, total)
+    puts judge(correct,total) + " #{correct} out of #{total}!"
     puts "That's all I've got, goodbye!"
+  end
+
+  def judge(correct, total)
+    bad  = proc { |n| n < 0.3 }
+    meh  = proc { |n| n < 0.6 }
+    good = proc { |n| n < 0.99 }
+    case correct / total.to_f
+    when bad
+      "You can do better then that..."
+    when meh
+      "Not too shabby."
+    when good
+      "Nicely done!"
+    else
+      "Perfect!"
+    end
   end
 end
