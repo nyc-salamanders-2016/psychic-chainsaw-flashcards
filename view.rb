@@ -5,8 +5,8 @@ class FlashcardViewer
     puts "Hello! Welcome to Flashcards!"
   end
 
-  def show_front(front_of_card)
-    puts "Question: #{front_of_card}"
+  def show_front(number, front_of_card)
+    puts "Question ##{number}: #{front_of_card}"
     STDIN.gets.chomp
   end
 
@@ -22,7 +22,8 @@ class FlashcardViewer
     puts back_of_card
   end
 
-  def goodbye
+  def goodbye(correct, total)
+    puts "Not bad! #{correct} out of #{total}!"
     puts "That's all I've got, goodbye!"
   end
 end
